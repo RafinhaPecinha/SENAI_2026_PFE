@@ -22,6 +22,7 @@ imagem.setAttribute('src','./img/morro.jpg')
 imagem.classList.add('imagem')
 
 //eventos
-botao,addEventListener('click', () =>{
-    console.log('clique no botao' + contador++)
+let contador = 0
+botao.addEventListener('click', () =>{
+    alert('clique no botao' + contador++)
 })
