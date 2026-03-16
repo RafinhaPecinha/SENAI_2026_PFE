@@ -72,7 +72,7 @@ class JogadorFutebolAmericano extends Jogador {
  }
 
  const jogador = new JogadorFutebol('esquerdo', 20, 'Kelvin Destaque', 7)
- jogador.fazerGol(2 );
+ jogador.fazerGol(2);
  console.log(jogador.mostrar())
 
 const jogadorNFL = new JogadorFutebolAmericano("Kenneth Walker III", 9);

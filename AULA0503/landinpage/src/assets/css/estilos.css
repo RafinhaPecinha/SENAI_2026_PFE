@@ -1,0 +1,52 @@
+/* Seção Contato */
+#contato {
+    background-color: #111;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#contato h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+#contato p {
+    margin-bottom: 30px;
+}
+
+/* Formulário */
+#contato form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#contato input,
+#contato textarea {
+    margin-bottom: 15px;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#contato textarea {
+    resize: none;
+    height: 120px;
+}
+
+#contato button {
+    background-color: #ff4d00;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#contato button:hover {
+    background-color: #ff6a2a;
+}
