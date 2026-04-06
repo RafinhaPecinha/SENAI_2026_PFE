@@ -1,5 +1,5 @@
 const estudantes = [
-    {id: 1, nome: 'Davizola Degusta', rm: 2916, disciplina: "Matemática"},
+    {id: 1, nome: 'Davizola Nga', rm: 2916, disciplina: "Matemática"},
     {id: 2, nome: 'Kelvin Destaque', rm: 3222, disciplina: "Matemática"},
     {id: 3, nome: 'Rafudo Zikoso', rm: 6767, disciplina: "Inglês"}
 ];
