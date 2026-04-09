@@ -24,7 +24,10 @@ export default function Login(){
                         <input type="password" id="senha" value={senha} onChange={(e) => setSenha(e.target.value)} />
                         <label htmlFor="senha">Senha</label>
 
-                        <Link>Login</Link>
+                        
+
+                        <Link to= "/dashboard">Login</Link>
+                        <p><Link to="/register" className="link-secondary" link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover>Não tem conta? Cadastre-se</Link></p>
                     </form>
                 </div>
 
