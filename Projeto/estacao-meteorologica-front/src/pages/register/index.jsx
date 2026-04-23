@@ -30,7 +30,7 @@ export default function Register(){
                         
                         
 
-                        <button>Cadastrar</button>
+                        <Link to="/dashboard">Cadastrar</Link>
                     </form>
                 </div>
 
