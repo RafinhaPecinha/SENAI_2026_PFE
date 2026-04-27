@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import Header from "../../components/header";
+import "./Cadastro.css"
 
 export default function cadastro(){
-    const{nome, setNome} = useState('')
-    const{endereco, setEndereco} = useState('')
-    const{email, setEmail} = useState('')
-    const{celular, setCelular} = useState('')
-    const{documento, setDocumento} = useState('')
+    const [nome, setNome] = useState('')
+    const [endereco, setEndereco] = useState('')
+    const [email, setEmail] = useState('')
+    const [celular, setCelular] = useState('')
+    const [documento, setDocumento] = useState('')
 
     return (
         <section className="container">

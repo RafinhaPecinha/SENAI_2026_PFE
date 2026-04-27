@@ -1,138 +1,140 @@
 /* RESET */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* FUNDO */
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+}
 
-body{
-    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+/* HEADER - ajuste se necessário */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
 }
 
 /* CARDS */
-
-.cards{
-    display:grid;
+.cards {
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap:20px;
-
-    padding:100px 40px 40px; /* espaço por causa do header */
+    gap: 20px;
+    padding: 120px 40px 60px;   /* espaço maior em cima por causa do header fixo */
 }
 
 /* CARD */
-
-.card{
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
-
-    border-radius:15px;
-
-    padding:20px;
-
-    color:white;
-
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
-
-    transition:0.3s;
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
 }
 
-.card:hover{
-    transform:translateY(-5px);
+.card:hover {
+    transform: translateY(-5px);
 }
 
-/* TEXTO DOS CARDS */
-
-.card h6{
-    font-size:14px;
-    color:#ccc;
-    margin-bottom:10px;
+.card h6 {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 10px;
 }
 
-.card h2{
-    font-size:28px;
+.card h2 {
+    font-size: 28px;
 }
 
-/* GRAFICOS */
-
-.graficos{
-    margin:20px 40px;
-
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
-
-    border-radius:15px;
-
-    padding:20px;
-
-    color:white;
-
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+/* ====================== GRAFICOS - CORRIGIDO ====================== */
+.graficos {
+    margin: 20px 40px 40px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-.graficos h6{
-    margin-bottom:15px;
+.graficos h6 {
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    text-align: center;
+    color: #fff;
 }
 
-/* ÁREA DO GRÁFICO */
-
-.graficos div{
-    height:150px;
-    border-radius:10px;
-
-    background:rgba(255,255,255,0.1);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    color:#bbb;
+/* Área onde ficará o gráfico */
+.graficos > div {
+    height: 380px;                    /* altura boa para gráficos */
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bbb;
+    font-size: 1.1rem;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
 }
 
-/* TABELA */
-
-.tabela{
-    margin:20px 40px 40px;
-
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
-
-    border-radius:15px;
-
-    padding:20px;
-
-    color:white;
-
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+/* ====================== TABELA ====================== */
+.tabela {
+    margin: 20px 40px 60px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-.tabela h6{
-    margin-bottom:15px;
+.tabela h6 {
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    text-align: center;
 }
 
 /* TABLE */
-
-table{
-    width:100%;
-    border-collapse:collapse;
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-th, td{
-    padding:12px;
-    text-align:left;
+th, td {
+    padding: 14px 12px;
+    text-align: center;        /* mudei para center para ficar mais bonito */
 }
 
-th{
-    color:#36d1dc;
+th {
+    color: #36d1dc;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.2);
 }
 
-tbody tr{
-    border-top:1px solid rgba(255,255,255,0.1);
+tbody tr {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-tbody tr:hover{
-    background:rgba(255,255,255,0.05);
+tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Responsividade extra */
+@media (max-width: 768px) {
+    .cards, .graficos, .tabela {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .cards {
+        padding: 110px 20px 50px;
+    }
 }
