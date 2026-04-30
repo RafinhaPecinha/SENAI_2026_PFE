@@ -1,27 +1,24 @@
+import GraficoBarra from "../../components/graficoBarra";
 import Header from "../../components/header";
-import "./Relatorio.css";
 
 export default function Relatorio(){
 
     const leituras = [
-        {horario: "12:00", qualidadeAr: "Boa", iqa: 67, temperatura: '26°C', umidade:"67%"},
-        {horario: "16:07", qualidadeAr: "Moderada", iqa: 76, temperatura: '30°C', umidade:"50%"},
-        {horario: "06:07", qualidadeAr: "Muito boa", iqa: 41, temperatura: '23°C', umidade:"80%"},
-        {horario: "18:07", qualidadeAr: "Moderada", iqa: 69, temperatura: '33°C', umidade:"47%"}
-    ]
+        {horario: "12:00", qualidadeAr: "Boa", iqa: 42, temperatura: '26°C', umidade: '67%'},
+        {horario: "13:00", qualidadeAr: "Boa", iqa: 45, temperatura: '27°C', umidade: '69%'},
+        {horario: "14:00", qualidadeAr: "Boa", iqa: 47, temperatura: '28°C', umidade: '64%'},
+        {horario: "15:00", qualidadeAr: "Média", iqa: 39, temperatura: '29°C', umidade: '63%'}
+    ];
 
     return(
-        <div className="relatorio-container">
-
-            <Header />
-
-            <h3 className="titulo">Relatório Estação Meteorológica</h3>
-            <p className="subtitulo">
-                Monitoramento da temperatura e umidade em tempo real
-            </p>
+        <>
+        <Header />
+        <div className="container">
+            <h3>Relatório Estação Meteorológica</h3>
+            <p>Monitoramento da temperatura e umidade em tempo real</p>
 
             <section className="graficos">
-                {/* Futuro gráfico */}
+                <GraficoBarra />
             </section>
 
             <section className="tabela-leituras">
@@ -29,27 +26,18 @@ export default function Relatorio(){
                     <thead>
                         <tr>
                             <th>Horário</th>
-                            <th>Qualidade</th>
+                            <th>Qualidade Ar</th>
                             <th>IQA</th>
                             <th>Temperatura</th>
                             <th>Umidade</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         {
-                            leituras.map((item, index) =>(
+                            leituras.map((item, index) => (
                                 <tr key={index}>
                                     <td>{item.horario}</td>
-
-                                    <td className={
-                                        item.qualidadeAr === "Boa" ? "boa" :
-                                        item.qualidadeAr === "Muito boa" ? "muito-boa" :
-                                        "moderada"
-                                    }>
-                                        {item.qualidadeAr}
-                                    </td>
-
+                                    <td>{item.qualidadeAr}</td>
                                     <td>{item.iqa}</td>
                                     <td>{item.temperatura}</td>
                                     <td>{item.umidade}</td>
@@ -59,7 +47,7 @@ export default function Relatorio(){
                     </tbody>
                 </table>
             </section>
-
         </div>
+        </>
     )
 }

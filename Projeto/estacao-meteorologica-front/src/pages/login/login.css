@@ -1,132 +1,306 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
+/* RESET */
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-/* FUNDO */
+html, body, #root{
+  width:100%;
+  min-height:100%;
+  font-family:Arial, Helvetica, sans-serif;
+}
 
+/* FUNDO GLOBAL */
 body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  background:linear-gradient(
+    180deg,
+    #87ceeb 0%,
+    #b0e0e6 40%,
+    #e0f7fa 100%
+  );
+  color:#1f2937;
 }
 
-/* CENTRALIZAÇÃO */
 
-section{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+/* PÁGINA LOGIN / REGISTRO */
+.login-page{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+
+  background:
+    linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.15)),
+    url("/src/assets/nuvens.jpg");
+
+  background-size:cover;
+  background-position:center;
 }
 
-/* CARD LOGIN */
 
-section > div{
-    width:380px;
-    padding:35px;
+/* CARD PADRÃO */
+.login-card,
+.container,
+.graficos,
+.tabela-leituras{
+  background:rgba(255,255,255,0.75);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.4);
 
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(15px);
-
-    border-radius:18px;
-
-    box-shadow:0 20px 45px rgba(0,0,0,0.5);
-
-    border:1px solid rgba(255,255,255,0.2);
+  border-radius:20px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.08);
 }
 
-/* TÍTULO */
 
-h2{
-    text-align:center;
-    color:white;
-    margin-bottom:25px;
-    font-weight:600;
+/* LOGIN CARD */
+.login-card{
+  width:100%;
+  max-width:400px;
+  padding:35px;
 }
 
-/* FORM */
-
-form{
-    display:flex;
-    flex-direction:column;
+.login-card h2{
+  text-align:center;
+  margin-bottom:25px;
+  font-size:28px;
 }
+
 
 /* INPUTS */
+.form-control,
+.container input{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:12px;
 
-input{
-    padding:12px;
-    border:none;
-    border-radius:8px;
+  background:rgba(255,255,255,0.9);
+  color:#1f2937;
 
-    background:rgba(255,255,255,0.15);
-    color:white;
-
-    outline:none;
-
-    margin-bottom:5px;
-
-    transition:0.3s;
+  outline:none;
+  transition:0.2s;
 }
 
-input:focus{
-    background:rgba(255,255,255,0.25);
+.form-control:focus,
+.container input:focus{
+  transform:scale(1.02);
+  box-shadow:0 0 0 3px rgba(59,130,246,0.2);
 }
 
-/* LABEL */
-
-label{
-    color:#ddd;
-    font-size:13px;
-    margin-bottom:15px;
+.container label{
+  margin-top:10px;
+  margin-bottom:8px;
+  font-weight:600;
 }
 
-/* BOTÃO LOGIN */
 
-form > a{
-    text-align:center;
+/* BOTÕES */
+.btn,
+.container button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:12px;
 
-    padding:12px;
+  background:linear-gradient(
+    90deg,
+    #2563eb,
+    #38bdf8
+  );
 
-    border-radius:10px;
-
-    background:linear-gradient(90deg,#36d1dc,#5b86e5);
-
-    color:white;
-    text-decoration:none;
-
-    font-weight:500;
-
-    margin-top:10px;
-    margin-bottom:15px;
-
-    transition:0.3s;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.2s;
 }
 
-form > a:hover{
-    transform:translateY(-2px);
-    box-shadow:0 10px 20px rgba(0,0,0,0.3);
+.btn:hover,
+.container button:hover{
+  transform:translateY(-2px);
 }
 
-/* LINK CADASTRO */
+
+/* HEADER */
+header{
+  width:100%;
+  min-height:90px;
+  padding:0 40px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  background:rgba(255,255,255,0.65);
+  backdrop-filter:blur(12px);
+
+  border-bottom:1px solid rgba(255,255,255,0.4);
+}
+
+header h2{
+  font-size:28px;
+  font-weight:700;
+}
+
+header nav ul{
+  display:flex;
+  list-style:none;
+  gap:30px;
+}
+
+header nav ul li a{
+  text-decoration:none;
+  color:#1f2937;
+  font-weight:600;
+  transition:0.2s;
+}
+
+header nav ul li a:hover{
+  color:#2563eb;
+}
+
+
+/* CONTAINER PADRÃO */
+.container{
+  max-width:1100px;
+  margin:30px auto;
+  padding:30px;
+}
+
+
+/* DASHBOARD */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+  gap:20px;
+  padding:30px;
+}
+
+.card{
+  background:rgba(255,255,255,0.8);
+  backdrop-filter:blur(10px);
+
+  border-radius:18px;
+  padding:25px;
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
+  transition:0.2s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+}
+
+.card h6{
+  font-size:14px;
+  color:#64748b;
+}
+
+.card h2{
+  margin-top:10px;
+  font-size:32px;
+  color:#2563eb;
+}
+
+
+/* GRÁFICOS */
+.graficos{
+  padding:25px;
+  margin-top:20px;
+  min-height:350px;
+}
+
+.graficos canvas{
+  width:100% !important;
+}
+
+
+/* TABELAS */
+.tabela,
+.tabela-leituras{
+  margin-top:30px;
+  padding:20px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  overflow:hidden;
+  border-radius:15px;
+}
+
+th{
+  background:#2563eb;
+  color:white;
+  padding:15px;
+  text-align:center;
+}
+
+td{
+  padding:15px;
+  text-align:center;
+  border-bottom:1px solid rgba(0,0,0,0.08);
+}
+
+tbody tr{
+  transition:0.2s;
+}
+
+tbody tr:hover{
+  background:rgba(255,255,255,0.5);
+}
+
+
+/* TITULOS */
+h3{
+  text-align:center;
+  margin-bottom:10px;
+}
 
 p{
-    text-align:center;
-    font-size:14px;
-    color:#ddd;
+  text-align:center;
+  margin-bottom:25px;
+  color:#475569;
 }
 
-p a{
-    color:#5b86e5;
-    text-decoration:none;
-}
 
-p a:hover{
-    text-decoration:underline;
+/* RESPONSIVO */
+@media (max-width:768px){
+
+  header{
+    flex-direction:column;
+    gap:15px;
+    padding:20px;
+  }
+
+  header nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+  }
+
+  .cards{
+    padding:20px;
+  }
+
+  .container{
+    margin:20px;
+    padding:20px;
+  }
+
+  .login-card{
+    padding:25px;
+  }
+
+  table{
+    min-width:700px;
+  }
+
+  .tabela,
+  .tabela-leituras{
+    overflow-x:auto;
+  }
+
 }
